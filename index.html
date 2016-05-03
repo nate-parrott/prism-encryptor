@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='sjcl.js'></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan='2'>
+				<input id='password' placeholder='password' type='password'/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2>Encrypt</h2>
+				<textarea id='encrypt-plaintext'></textarea>
+				<button onClick='encrypt()'>Encrypt</button>
+				<textarea id='encrypt-ciphertext'></textarea>
+			</td>
+			<td>
+				<h2>Decrypt</h2>
+				<textarea id='decrypt-ciphertext'></textarea>
+				<button onClick='decrypt()'>Decrypt</button>
+				<textarea id='decrypt-plaintext'></textarea>
+			</td>
+		</tr>
+	</table>
+	<script src='index.js'></script>
+</body>
+</html>
