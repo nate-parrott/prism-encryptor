@@ -1,0 +1,70 @@
+#tab-content > div {
+	display: none;
+}
+#encrypt-result, #decrypt-result {
+	display: none;
+}
+body {
+	font-family: "Arial Narrow", sans-serif;
+	background-position: 0% 0%;
+	color: black;
+}
+h1 {
+	font-style: italic;
+	font-size: 2.5em;
+	margin: 15px;
+}
+body {
+	margin: auto;
+	padding: 20px;
+	max-width: 700px;
+	text-align: center;
+	font-size: x-large;
+	line-height: 1.7;
+}
+input[type=text], input[type=password], textarea {
+	appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid black;
+	border-radius: 0;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	outline: none;
+	font-size: 1em;
+	font-family: inherit;
+}
+textarea {
+	height: 5em;
+}
+#tab-content > div > div {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+#tabs > div, #encrypt button, #decrypt button {
+	display: inline-block;
+	padding: 5px 20px;
+	font-weight: bold;
+	letter-spacing: 4px;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	-webkit-text-stroke: 1.5px black;
+	text-stroke: 1.5px black;
+	color: white;
+	appearance: none;
+	-webkit-appearance: none;
+	background: none;
+	border: none;
+	font-family: inherit;
+	cursor: default;
+}
+#tabs > div:hover, #encrypt button:hover, #decrypt button:hover {
+	color: black;
+}
+
+#tabs > div:not(:hover).selected {
+	background-image: url('noise.png');
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+}

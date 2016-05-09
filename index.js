@@ -26,15 +26,32 @@ function wordDecode(text) {
 
 function encrypt() {
 	var plain = document.getElementById('encrypt-plaintext').value;
-	var password = document.getElementById('password').value;
+	var password = document.getElementById('encrypt-pwd').value;
 	var cipher = sjcl.encrypt(password, plain);
 	document.getElementById('encrypt-ciphertext').value = wordCode(btoa(cipher));// JSON.parse(cipher).ct;
+	$("#encrypt-result").show();
 }
 function decrypt() {
 	var cipher = atob(wordDecode(document.getElementById('decrypt-ciphertext').value));
-	var password = document.getElementById('password').value;
+	var password = document.getElementById('decrypt-pwd').value;
 	var plain = sjcl.decrypt(password, cipher);
 	document.getElementById('decrypt-plaintext').value = plain;
+	$("#decrypt-result").show();
 }
 
 // https://www.scribd.com/doc/150435756/How-the-DHS-Monitors-You-on-the-Internet#page=21
+
+function selectTab(tab) {
+	$("#tabs > div").removeClass('selected');
+	$("#tabs > div[data-tab-id=" + tab + "]").addClass('selected');
+	$("#tab-content > div").hide();
+	$("#" + tab).show();
+}
+
+$("#tabs > div[data-tab-id]").click(function(e) {
+	var id = $(e.target).attr('data-tab-id');
+	selectTab(id);
+})
+
+
+$("#tabs > div:first-child").click();
