@@ -5,50 +5,54 @@
 	<script src='sjcl.js'></script>
 	<link rel='stylesheet' href='index.css'/>
 	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+	<link rel='stylesheet' href='lettercrap.css'/>
 </head>
 <body>
 	<div id='header'>
-		<h1>PRISM Encryptor™</h1>
-		<p>Securely encrypt your message using top Department of Homeland Security <span class='underline'>web surveillance keywords as code words.</span></p>
+		<img id='main' alt='PRISM Encryptor' src='enc.svg'/>
 	</div>
-	<div id='tabs'>
-		<div data-tab-id='encrypt'>Encrypt</div>
-		<div data-tab-id='decrypt'>Decrypt</div>
-	</div>
-	<img src='down-arrow.svg'/>
-	<div id='tab-content'>
-		<div id='encrypt'>
-			<div>
-				<label>Enter your encryption/decryption passphrase</label>
-				<input id='encrypt-pwd' placeholder='' type='password'/>
+	<div id='content'>
+		<p>Securely encrypt your message using top Department of Homeland Security <span class='underline'>web surveillance <a href='https://www.scribd.com/doc/150435756/How-the-DHS-Monitors-You-on-the-Internet#page=21'>keywords</a> as code words.</span></p>
+		
+		<div id='tabs'>
+			<div data-tab-id='encrypt'>Encrypt</div>
+			<div data-tab-id='decrypt'>Decrypt</div>
+		</div>
+		<img src='down-arrow.svg'/>
+		<div id='tab-content'>
+			<div id='encrypt'>
+				<div>
+					<label>Enter your encryption/decryption passphrase</label>
+					<input id='encrypt-pwd' placeholder='' type='password'/>
+				</div>
+				<div>
+					<label>Enter your message</label>
+					<textarea id='encrypt-plaintext'></textarea>
+				</div>
+				<button onClick='encrypt()'>Encrypt</button>
+				<div id='encrypt-result'>
+					<label>Encrypted ciphertext</label>
+					<textarea id='encrypt-ciphertext'></textarea>
+				</div>
 			</div>
-			<div>
-				<label>Enter your message</label>
-				<textarea id='encrypt-plaintext'></textarea>
-			</div>
-			<button onClick='encrypt()'>Encrypt</button>
-			<div id='encrypt-result'>
-				<label>Encrypted ciphertext</label>
-				<textarea id='encrypt-ciphertext'></textarea>
+			<div id='decrypt'>
+				<div>
+					<label>Enter your encryption/decryption passphrase</label>
+					<input id='decrypt-pwd' placeholder='' type='password'/>
+				</div>
+				<div>
+					<label>Enter your encrypted ciphertext</label>
+					<textarea id='decrypt-ciphertext'></textarea>
+				</div>
+				<button onClick='decrypt()'>Decrypt</button>
+				<div id='decrypt-result'>
+					<label>Decrypted message</label>
+					<textarea id='decrypt-plaintext'></textarea>
+				</div>
 			</div>
 		</div>
-		<div id='decrypt'>
-			<div>
-				<label>Enter your encryption/decryption passphrase</label>
-				<input id='decrypt-pwd' placeholder='' type='password'/>
-			</div>
-			<div>
-				<label>Enter your encrypted ciphertext</label>
-				<textarea id='decrypt-ciphertext'></textarea>
-			</div>
-			<button onClick='decrypt()'>Decrypt</button>
-			<div id='decrypt-result'>
-				<label>Decrypted message</label>
-				<textarea id='decrypt-plaintext'></textarea>
-			</div>
-		</div>
 	</div>
-	
+		
 	<script src='index.js'></script>
 </body>
 </html>

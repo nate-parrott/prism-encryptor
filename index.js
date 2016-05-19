@@ -30,13 +30,16 @@ function encrypt() {
 	var cipher = sjcl.encrypt(password, plain);
 	document.getElementById('encrypt-ciphertext').value = wordCode(btoa(cipher));// JSON.parse(cipher).ct;
 	$("#encrypt-result").show();
+	$(window).scrollTop($(document).height());
 }
+
 function decrypt() {
 	var cipher = atob(wordDecode(document.getElementById('decrypt-ciphertext').value));
 	var password = document.getElementById('decrypt-pwd').value;
 	var plain = sjcl.decrypt(password, cipher);
 	document.getElementById('decrypt-plaintext').value = plain;
 	$("#decrypt-result").show();
+	$(window).scrollTop($(document).height());
 }
 
 // https://www.scribd.com/doc/150435756/How-the-DHS-Monitors-You-on-the-Internet#page=21

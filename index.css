@@ -8,13 +8,20 @@ body {
 	font-family: "Arial Narrow", sans-serif;
 	background-position: 0% 0%;
 	color: black;
+	overflow-x: hidden;
+}
+img#main {
+	width: 100%;
+	position: relative;
+	margin-top: -15px;
+	overflow: hidden;
 }
 h1 {
 	font-style: italic;
 	font-size: 2.5em;
 	margin: 15px;
 }
-body {
+#content {
 	margin: auto;
 	padding: 20px;
 	max-width: 700px;
